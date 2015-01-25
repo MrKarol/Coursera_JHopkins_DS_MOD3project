@@ -17,7 +17,7 @@ features <- make.names(features) #example: tBodyAcc-mean()-X becomes tBodyAcc.me
 ###TRAIN set 
 #load train data:
 train <- read.table("UCI HAR Dataset/train/X_train.txt",header=FALSE,sep="")
-#renaming columns in train using features data frame, we want to have user friendly varable name, example: V1 becomes "tBodyAcc-mean()-X"
+#rename columns in train using features data frame, we want to have user friendly varable name, example: V1 becomes "tBodyAcc-mean()-X"
 train_old_names = names(train)
 train <- setnames(train, old = train_old_names, new = features)
 

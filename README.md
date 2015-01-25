@@ -26,10 +26,50 @@ The following source files from the "UCI HAR Dataset" folder were used by run_an
 
 run_analysis.R conducts the following operations on the raw data to produce tidy.txt file:
 
-1. Merge the training and the test sets to create one data set and provide descriptive variable names . 
+1. Merge the training and the test sets to create one data set and provide descriptive variable names:
+
+   A. load activity ids and labels from UCI HAR Dataset/activity_labels.txt
+   
+   B. load list of variables of each feature vector from UCI HAR Dataset/features.txt
+   
+   C. load train data from UCI HAR Dataset/train/X_train.txt
+   
+   D. rename columns in C using data frame from B, we want to have user friendly varable name, example: V1 becomes "tBodyAcc-mean()-X"
+   
+   E. load subject ids for train data from UCI HAR Dataset/train/subject_train.txt
+   
+   F. assign user friendly variable name to a column of data frame from point E, V1 becomes SubjectID
+   
+   G. load train activity label id from UCI HAR Dataset/train/y_train.txt
+   
+   H. assign user friendly variable name to a column of data frame from point G, V1 becomes ActivityID
+   
+   I. create final train data table by column binding data frames from F, H, D
+   
+   J. load test data from UCI HAR Dataset/test/X_test.txt
+   
+   K. rename columns in J using data frame from B, we want to have user friendly varable name, example: V1 becomes "tBodyAcc-mean()-X"
+   
+   L. load subject ids for test data from UCI HAR Dataset/test/subject_test.txt
+   
+   M. assign user friendly variable name to a column of data frame from point L, V1 becomes SubjectID
+   
+   N. load test activity label id from UCI HAR Dataset/test/y_test.txt
+   
+   O. assign user friendly variable name to a column of data frame from point N, V1 becomes ActivityID
+   
+   P. create final test data table by column binding data frames from M, O, K
+   
+   R. merge data frames from I and P by row binding
+   
 2. Extract from the new merged data set only the measurements on the mean and standard deviation for each measurement. 
-3. Uses descriptive activity names to name the activities in the data set
-4. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject
+
+    In this step we are reducing the number of columns in the merge data frame to only those that we are interested in: ActivityID,SubjectID and any column     that have "std.." or "mean.." in its name
+
+3. Uses descriptive activity names to name the activities in the merged data set
+
+4. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject (mean of all variables group by activity and subject)
+
 5. Save independent tidy data to tidy.txt
 
 **run_analysis.R code has been explained in details using script commentaries - open the script file to read code explanation**
