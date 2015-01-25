@@ -6,9 +6,9 @@ output: word_document
 ---
 
 ###1. Overview
-The objective of the project is to create a tidy.csv data set based on the raw data collected from the accelerometers from the Samsung Galaxy S smartphone. 
+The objective of the project is to create a tidy.txt data set based on the raw data collected from the accelerometers from the Samsung Galaxy S smartphone. 
 
-To fulfil the project's requirements, the R script has been developed: run_analysis.R, which purpose was to collect, transform and tidy raw data. The final results were saved in the tidy.csv file.
+To fulfil the project's requirements, the R script has been developed: run_analysis.R, which purpose was to collect, transform and tidy raw data. The final results were saved in the tidy.txt file.
 
 **See Readme.md file for an explanation of the run_analysis.R script.**
 
@@ -21,7 +21,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 The raw data was downloaded and extracted to "UCI HAR Dataset" folder. The run_analysis.R script and "UCI HAR Dataset" folder are located in the same folder (working directory).
 
-The following source files from the "UCI HAR Dataset" folder were used by run_analysis.R to produce tidy.csv:
+The following source files from the "UCI HAR Dataset" folder were used by run_analysis.R to produce tidy.txt:
 
 * UCI HAR Dataset/activity_labels.txt - an activity's user friendly desciption of a given activity id
 * UCI HAR Dataset/features.txt - list of all features (variables in X_train.txt, X_test.txt). The label of the column Nth of the X_train.txt/X_test.txt can be found in the row N of features.txt.
@@ -34,7 +34,7 @@ The following source files from the "UCI HAR Dataset" folder were used by run_an
 
 
 ###4. Code Book
-The tidy.csv (the final output file produced by run_analysis.R) contains the following variables:
+The tidy.txt (the final output file produced by run_analysis.R) contains the following variables:
 
 * Activity - activity measured
 * SubjectID - identifier of a subject

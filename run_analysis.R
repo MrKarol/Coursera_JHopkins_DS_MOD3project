@@ -77,6 +77,6 @@ mergeSubset <- rename(mergeSubset,Activity=V2)
 tidy <- mergeSubset[,2:69] #this will remove ActivityID field, we do not need it in the summarise_each
 tidy <- tidy %>% group_by(Activity,SubjectID) %>% summarise_each(funs(mean))
 
-#storing tidy and mergeSubset in the csv files - they Will be saved in the same location where R script is
-write.table(tidy,"tidy.csv",row.names=FALSE)
-write.table(mergeSubset,"mergeSubset.csv",row.names=FALSE)
+#storing tidy and mergeSubset in the txt files - they Will be saved in the same location where R script is
+write.table(tidy,"tidy.txt",row.names=FALSE)
+write.table(mergeSubset,"mergeSubset.txt",row.names=FALSE)
