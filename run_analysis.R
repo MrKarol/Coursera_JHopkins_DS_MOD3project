@@ -4,7 +4,7 @@ library(magrittr)
 
 ###################################################################
 ###1. Merges the training and the test sets to create one data set.
-###4. Appropriately labels the data set with descriptive variable names. 
+###   Appropriately labels the data set with descriptive variable names. 
 ###################################################################
 #load activity ids and labels:
 activity <- read.table("UCI HAR Dataset/activity_labels.txt",header=FALSE,sep="")
@@ -61,7 +61,7 @@ merge <- rbind(train_F,test_F)
 ###2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 ############################################################################################
 #in this step we are reducing the number of columns in the merge data frame to only those that we are interested in
-#we are interested in ActivityID,SubjectID and any column that have "std()" or "mean()" in its name
+#we are interested in ActivityID,SubjectID and any column that have "std.." or "mean.." in its name
 colIndex <- sort(c(1,2,grep("std..",colnames(merge),value=FALSE,fixed=TRUE),grep("mean..",colnames(merge),value=FALSE,fixed=TRUE)))
 mergeSubset <- merge[,colIndex]
 
@@ -72,7 +72,7 @@ mergeSubset <- merge(mergeSubset,activity,by.x="ActivityID",by.y="V1",all=FALSE)
 mergeSubset <- rename(mergeSubset,Activity=V2)
 
 ###################################################################################################################################################
-###5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+###4. From the data set in step 3 (mergeSubset), create new independent tidy data set with the average of each variable for each activity and each subject.
 ###################################################################################################################################################
 tidy <- mergeSubset[,2:69] #this will remove ActivityID field, we do not need it in the summarise_each
 tidy <- tidy %>% group_by(Activity,SubjectID) %>% summarise_each(funs(mean))

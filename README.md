@@ -20,9 +20,9 @@ The following source files from the "UCI HAR Dataset" folder were used by run_an
 * UCI HAR Dataset/train/y_train.txt -  data in the Nth row of the training data set relates to an activity id identified in the Nth row of the y_train.txt. An activity's user friendly desciption of a given activity id can be found in the activity_labels.txt
 * UCI HAR Dataset/test/X_test.txt - test data set
 * UCI HAR Dataset/test/subject_test.txt - each row identifies the subject who performed the activity for each window sample. The data in the Nth row of test data set relates to a subject identified in the Nth row of subject_test.txt
-* UCI HAR Dataset/test/y_test.txt - data in the Nth row of the training data set relates to an activity id identified in the Nth row of the y_test.txt. An activity's user friendly desciption of a given activity id can be found in the activity_labels.txt
+* UCI HAR Dataset/test/y_test.txt - data in the Nth row of the training data set relates to an activity id identified in the Nth row of the y_test.txt. An activity's user friendly description of a given activity id can be found in the activity_labels.txt
 
-**run_analysis.R script and "UCI HAR Dataset" folder are located in the working directory.**
+**run_analysis.R script and "UCI HAR Dataset" folder are located in the working directory (same location).**
 
 run_analysis.R conducts the following operations on the raw data to produce tidy.csv file:
 
